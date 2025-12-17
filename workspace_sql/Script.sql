@@ -154,6 +154,7 @@ SELECT empno, ename, job, sal, deptno FROM emp
 WHERE deptno = 30 AND job = 'SALESMAN'
 
 SELECT * FROM EMP 
+
 WHERE NOT (sal >= 2000 AND sal <= 3000);
 
 SELECT ename, upper(ename), lower(ename), initcap(ename) FROM emp;
@@ -353,3 +354,4 @@ FROM emp;
 
 
 substr(a, b, c)
+
