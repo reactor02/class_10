@@ -43,8 +43,8 @@ div .message3 {
 	
 }
 
-div[herf] {
-
+.square {
+	width: 30px;
 }
 
 .message3:hover {
