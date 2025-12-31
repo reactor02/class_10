@@ -17,13 +17,13 @@
 #content {
 	height: 150px;
 	width: 400px;
-	border: 10px solid rgb(23, 0, 128);
+	
 	text-align: center;
 	margin: 50px auto;
 }
 
 div p, div div, div a {
-	border: 1px solid green;
+	
 	color: white;
 }
 
@@ -41,14 +41,15 @@ div .message3 {
 	height: 40px;
 	background-color: rgba(255, 255, 255, 0.452);
 	margin: 20px auto;
-	
+	overflow: hidden;
 	
 }
 
 #ican {
 	display: block;
-	margin: 10px auto;
+	margin: 5px auto;
 	text-decoration-line: none;
+	
 }
 
 .square {
