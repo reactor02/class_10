@@ -1,4 +1,4 @@
-        * { margin: 0;}
+        * { margin: 0; padding: 0;}
         nav{font-size: 0; width: 100%;} /* 부모에 font-size 0줘서 자식 리스트 끼리의 여백공간삭제*/
         .n1 {
             position: fixed;
@@ -18,8 +18,6 @@
             display: inline-block;
             background-color: blue;
             list-style: none;
-            margin: 0; 
-            padding: 0;
             text-align: center;
             
         }
@@ -44,7 +42,8 @@
             width: 33.3%;
             display: inline-block;
         }
-        .n1:hover+.n2{ /*둘은 형제 요소이므로 +로 묶어줘야 한다.*/ 
+        .n1:hover+.n2{ /*둘은 형제 요소이므로 +로 묶어줘야 한다.*/
+                         /*형제 요소는 바로 다음에 나오는 코드여야한다. 중간에 다른 코드가 있으면 형제요소 아님*/
             display: block;
             
         }
