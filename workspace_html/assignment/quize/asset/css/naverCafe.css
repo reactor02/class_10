@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 1100px;
     min-height: 100vh;
     margin: auto;
@@ -31,7 +31,7 @@ a:visited {
     text-decoration: none;
 }
 .aboveMenu {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 30px;
 }
 .naverLogo {
@@ -41,28 +41,37 @@ a:visited {
 }
 .aboveMenuChild {
     display: inline-block;
-    width: 450px;
+    width: 580px;
     height: 30px;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     float: right;
+    text-align: center;
+    line-height: 30px;
 }
 .right {
     
     margin: 0 5px;
     font-size: 15px;
 }
-
+.login {
+    border: 1px solid gray;
+    font-size: 15px;
+}
+.borderLine {
+    border-right: 1px solid rgba(128, 128, 128, 0.534);
+    padding-right: 15px;
+}
 .banner {
     background-image: url(	https://ssl.pstatic.net/static/cafe/cafe_pc/bg_default_title_white_180724.png);
     background-repeat: no-repeat;
     background-size: cover;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 100%;
     height: 180px; 
     text-align: left;
 }
 .banner a {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -112,7 +121,7 @@ a:visited {
     border-right: 1px solid black
 }
 .mangerBox {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     padding: 10px;
     height: 80px;
     width: 100%;   
@@ -123,7 +132,7 @@ a:visited {
     vertical-align: top;
 }
 .box1 {
-    border: 1px solid red ;
+    /* border: 1px solid red ; */
     width: 110px;
 }
 .box1-1 {
@@ -146,7 +155,7 @@ a:visited {
     display: inline-block;
 }
 .seed2 div {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background-image: url(https://ssl.pstatic.net/static/cafe/cafe_pc/svg/ico_member.svg);
     display: inline-block;
     width: 20px;
@@ -233,11 +242,11 @@ a:visited {
 }
 
 .bottom-1 {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 300px;
 }
 .bottom-2, .bottom-3, .bottom-4 {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100px; 
     height: 40px;
     text-align: center;     
@@ -249,18 +258,19 @@ a:visited {
     float: right;
     display: flex;
 }
-/* .bottom-3 {
-    border: 1px solid red;
+.bottom-3 {
+    /* border: 1px solid red; */
     width: 100px;   
     float: right;
 }
 .bottom-4 {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100px;   
-} */
+}
 
 .rightBottom .allthing1{
     float: left;
+    font-weight: 800;
 }
 .rightBottom .allthing2 {
     float: right;
@@ -316,6 +326,9 @@ footer span {
     position: relative;
     height: 30px;
 }
+[value=검색]:hover {
+    cursor: pointer;
+}
 
 .comment, .rightBottom ul {
     list-style-type: square;
@@ -329,7 +342,7 @@ footer span {
     background-position: -285px -223px;
     width: 12px;
     height: 12px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     vertical-align: baseline;
 }
 .listImg {
