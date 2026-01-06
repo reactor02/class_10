@@ -139,7 +139,7 @@ a:visited {
     font-weight: 700;
 }
 .box1-2 {
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     font-size: 10px;
     font-weight: 300;
 }
@@ -304,7 +304,7 @@ footer span {
 }
 
 .leftMenu, .rightMenu, .rightBottom, section{
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
 }
 
 [type=submit] {
