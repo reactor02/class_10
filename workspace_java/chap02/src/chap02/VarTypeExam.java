@@ -179,8 +179,7 @@ public class VarTypeExam {
 				 *
 				 */
 		
-		int 
-		
+	
 	}
 
 }

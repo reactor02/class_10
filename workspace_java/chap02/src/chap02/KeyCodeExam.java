@@ -67,6 +67,8 @@ public class KeyCodeExam {
 		int age3 = scanner.nextInt();
 		System.out.println("내년에" + (age3 + 1) + "살입니다.");
 	
+		
+		
 	}
 
 }

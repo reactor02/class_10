@@ -170,7 +170,8 @@ public class OpExam {
 		int temp = 5;
 		int temp2 = (++temp) + temp++;
 		System.out.println(temp2);
-				
+		
+		
 	}
 
 }
