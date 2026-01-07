@@ -30,5 +30,11 @@ public class KeyCodePratice {
 		int age2 = Integer.parseInt(inputData);
 		System.out.println(age2 + 1);
 		
+		int x = 212;
+		double y = x / (double) 10;
+		double z = x / 10.0; 
+		
+		System.out.println(y);
+		System.out.println(z);
 	}
 }
