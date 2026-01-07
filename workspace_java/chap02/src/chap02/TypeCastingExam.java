@@ -64,9 +64,30 @@ public class TypeCastingExam {
 		int math1 = 10;
 		int math2 = 7;
 		
-		//산술 연산자로 계산을 할 때 byte, short,char은 int로 casting이 됨.
+		//산술 연산자로 계산을 할 때 byte, short,char은 int로 promotion이 됨.
 		//연산 결과값에 casting을 줘야지만 int 아래의 타입에 할당 가능.
 		byte d123 = (byte) ((byte) math1/ (byte) math2);
+		
+		
+		//문자를 숫자로 바꾸기
+		String s1 ="123";
+		int i12 = Integer.parseInt(s1);
+		System.out.println(i12 + 1);
+		
+//		String s2 = "123";
+//		int i13 = (int) s2; 지원하지 않음
+
+//		String s3 = "123a";
+//		int i14 = Integer.parseInt(s3); // NumberFormatException
+		//에러나 예외가 발생하면 java가 즉시 종료된다. 밑에 줄까지 못 내려감
+//		System.out.println(i14);
+		
+		int i15 = 123;
+		String str = String.valueOf(i15);
+		System.out.println(str + 1);
+		
+		//가장 쉽게 숫자를 문자로 바꾸는 방법
+		String str1 = "" + i15;
 	}	
 
 }

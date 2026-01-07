@@ -167,7 +167,19 @@ public class VarTypeExam {
 		System.out.println("right: " + right);		
 		//뭔가 하기
 		
+		// 문제 7
+				/*
+				 * 숫자 149
+				 * --------
+				 * 출력결과
+				 * --------
+				 * "백의 자리 : 1"
+				 * "십의 자리 : 4"
+				 * "일의 자리 : 9"
+				 *
+				 */
 		
+		int 
 		
 	}
 
