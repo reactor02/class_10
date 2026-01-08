@@ -171,7 +171,7 @@ SELECT ename, LENGTH(ename) FROM emp
 SELECT * FROM emp
 WHERE length(ename) >= 5;
 -- 길이
-SELECT LENGTH('한글'), length()
+SELECT LENGTH('한글'), length();
 -- lengthb는 바이트 개수
 SELECT LENGTH('a'), LENGTH('한'), LENGTHB('a'), LENGTHB('한') FROM dual;
 
