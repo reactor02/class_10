@@ -171,7 +171,9 @@ public class OpExam {
 		int temp2 = (++temp) + temp++;
 		System.out.println(temp2);
 		
-		
+		int s = 95;
+		String grade = ( s > 90 ) ? "A" : "B" ;
+		System.out.println(grade);
 	}
 
 }
