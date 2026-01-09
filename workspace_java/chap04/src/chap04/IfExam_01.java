@@ -210,7 +210,9 @@ public class IfExam_01 {
 //			System.out.println(inputData2);
 //		} else if(inputData2 < inputData4) {
 //			System.out.println(inputData4);
-//		}
+//		} else {
+//        System.out.printf("%d와 %d, 두 수는 같습니다." inputData2, inputData4);
+//    	}
 //		//문제4
 //		//임의의 money를 입력받아서
 //		//7000원 이상이면 "택시타자" 출력
@@ -293,9 +295,9 @@ public class IfExam_01 {
 //		String inputData3 = scanner.nextLine();
 //		int z1 = Integer.parseInt(inputData3);
 //		if (z1 >= x1 && z1 <= y1) {
-//			System.out.println("포함됩니다");
+//			System.out.println("x1 <= z1 <= y1");
 //		}else if(z1 >= y1 && z1 <= x1) {
-//			System.out.println("얘도 포함됩니다.");
+//			System.out.println("y1 <= z1 <= x1");
 //		}else {
 //			System.out.println("포함 안됩니다");
 //		}
@@ -325,10 +327,21 @@ public class IfExam_01 {
 //		String inputData = scanner.nextLine();
 //		int num = Integer.parseInt(inputData);
 //		int oddEven = num % 2;
-//		if (num > 100 && num >= 0 && oddEven == 1) {
+//		if (num > 100 && num > 0 && oddEven == 1) {
 //			System.out.println("입력한 수는 100보다 크고, 양수이고, 홀수입니다.");
-//		}else {
-//			System.out.println("조건이 일치하지 않습니다.");
+//		}else if (num > 100 && oddEven == 0 ){
+//			System.out.println("입력한 수는 100보다 크고, 양수이고, 짝수입니다.");
+//		}else if (num <= 100 && num > 0 && oddEven == 1) {
+//			System.out.println("입력한 수는 100보다 작고, 양수이고, 홀수입니다.");
+//		}else if (num <= 100 && num > 0 && oddEven == 0) {
+//			System.out.println("입력한 수는 100보다 작고, 양수이고, 짝수입니다.");
+//		}
+//		else if (num == 0) {
+//			System.out.println("입력한 수는 100보다 작고, 0이고, 짝수입니다.");
+//		}else if (num < 0 && oddEven == -1) {
+//			System.out.println("입력한 수는 100보다 작고, 음수이고, 홀수입니다.");
+//		}else if (num < 0 && oddEven == 0) {
+//			System.out.println("입력한 수는 100보다 작고, 음수이고, 짝수입니다.");
 //		}
 		
 		//문제9
@@ -345,13 +358,13 @@ public class IfExam_01 {
 //		}else if (tem == 0) {
 //			System.out.println(tem +"도 입니다");
 //		}else {
-//			System.out.println("영하 " + tem + "도 입니다.");
+//			System.out.println("영하 " + tem * -1 + "도 입니다.");
 //		}
 				
 		//응용문제
 		//문제10
 		//시, 분을 입력 받아서 35분 후의 시, 분을 출력
-		// 3, 5을 입력받으면
+		// 3, 51을 입력받으면
 		//4시 26분 출력
 //		Scanner scanner = new Scanner(System.in);
 //		String inputData = scanner.nextLine();
@@ -375,6 +388,12 @@ public class IfExam_01 {
 //			System.out.println(hour + "시 " + min1 + "분");
 //		}
 		
+		//문제 10을 %를 써서 푼다면
+		//hour1 = (hour * 60 + min +35) / 60
+		//min1 = (hour * 60 + min + 35) % 60
+		//hour1이 24시간 미만은 hour1 +"시" + min1 + "분"
+		//hour1이 24시간 이상은 (hour1-24) +"시" +min1 + "분"
+		
 		
 		//문제11
 		//두자리 숫자를 입력받아서
@@ -395,12 +414,15 @@ public class IfExam_01 {
 		//1~99까지 369게임
 		//임의의 수를 받아서 3,6,9 숫자가 있으면 "박수" 출력
 		//예 : 33=>박수, 31=>박수, 12=>12, 14=>14
-//		Scanner scanner = new Scanner(System.in);
-//		String inputData = scanner.nextLine();
-//		int num = Integer.parseInt(inputData);
+//		int min0 = 1;
+//		int max0 = 99;
+//		double random22 = Math.random();
+//		int random369 = (int) (random22 * (max0 - min0 +1) + min0);
+//		int num = random369;
 //		int num1 = num % 10;
 //		int num10 = (num - num1)/10;
 //		if (num1 % 3 == 0 || num10 % 3 == 0) {
+//			System.out.println(num);
 //			System.out.println("박수");
 //		} else {
 //			System.out.println(num);
@@ -411,16 +433,24 @@ public class IfExam_01 {
 		// 사각형의 한쪽 모서리 : x1:10, y1:20
         // 반대편 모서리 : x2:90, y2:100
 		//입력받은 두 수를 좌표로 하는 점이 사각형에 겹치는가?
-		Scanner scanner = new Scanner(System.in);
-		String inputData = scanner.nextLine();
-		int x3 = Integer.parseInt(inputData);
-		inputData = scanner.nextLine();
-		int y3 = Integer.parseInt(inputData);
-		if ((x3 >= 10 && x3 <= 90) && (y3 >=20 && y3 <=100)) {
-			System.out.println("사각형에 겹칩니다.");
-		} else {
-			System.out.println("겹치지 않습니다");
-		}
+//		double x1 = 10;
+//		double x2 = 90;
+//		double y1 = 20;
+//		double y2 = 100;
+//		Scanner scanner = new Scanner(System.in);
+//		String inputData = scanner.nextLine();
+//		double x3 = Double.parseDouble(inputData);
+//		inputData = scanner.nextLine();
+//		double y3 = Double.parseDouble(inputData);
+//		if ((x3 >= x1 && x3 <= x2) && (y3 >=y1 && y3 <=y2)) {
+//			System.out.println("사각형에 겹칩니다.");
+//		} else {
+//			System.out.println("겹치지 않습니다");
+//		}
+		
+		
+		
+		
 	}
 
 }
