@@ -282,18 +282,18 @@ public class IfExam_01 {
 //			System.out.println("비겼다");
 //		}
 		
-		//여기까지가 180번 Scanner scanner = new Scanner(System.in); 살려서 쓴 곳임
+		여기까지가 180번 Scanner scanner = new Scanner(System.in); 살려서 쓴 곳임
 				
 		//문제6
 		//임의 세 수 x, y, z를 받아서
 		//z가 x~y 사이에 있는지 (포함) 판단
 //		Scanner scanner = new Scanner(System.in);
 //		String inputData1 = scanner.nextLine();
-//		int x1 = Integer.parseInt(inputData1);
+//		double x1 = Double.parseDouble(inputData1);
 //		String inputData2 = scanner.nextLine();
-//		int y1 = Integer.parseInt(inputData2);
+//		Double y1 = Double.parseDouble(inputData2);
 //		String inputData3 = scanner.nextLine();
-//		int z1 = Integer.parseInt(inputData3);
+//		Double z1 = Double.parseDouble(inputData3);
 //		if (z1 >= x1 && z1 <= y1) {
 //			System.out.println("x1 <= z1 <= y1");
 //		}else if(z1 >= y1 && z1 <= x1) {
@@ -433,6 +433,7 @@ public class IfExam_01 {
 		// 사각형의 한쪽 모서리 : x1:10, y1:20
         // 반대편 모서리 : x2:90, y2:100
 		//입력받은 두 수를 좌표로 하는 점이 사각형에 겹치는가?
+
 //		double x1 = 10;
 //		double x2 = 90;
 //		double y1 = 20;
@@ -443,14 +444,7 @@ public class IfExam_01 {
 //		inputData = scanner.nextLine();
 //		double y3 = Double.parseDouble(inputData);
 //		if ((x3 >= x1 && x3 <= x2) && (y3 >=y1 && y3 <=y2)) {
-//			System.out.println("사각형에 겹칩니다.");
-//		} else {
-//			System.out.println("겹치지 않습니다");
-//		}
-		
-		
-		
-		
+
 	}
 
 }
