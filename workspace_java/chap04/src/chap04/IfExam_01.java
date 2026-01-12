@@ -245,7 +245,7 @@ public class IfExam_01 {
 		//"이겼다", "비겼다", "졌다" 출력
 		//랜덤을 쓰고. 123중에 하나가 나오게 한다.
 		//123이랑 비교해서 값을 이용해서 가위바위보를 나오게한다.
-		//1 == 가위 2 == 바위 3== 보 
+		//1 == 가위 2 == 바위 3 == 보 
 //		inputData = scanner.nextLine();
 //		int min1 =1;
 //		int max1 =3;
@@ -403,7 +403,7 @@ public class IfExam_01 {
 //		String inputData = scanner.nextLine();
 //		int num = Integer.parseInt(inputData);
 //		int num1 = num % 10;
-//		int num10 = (num - num1)/10;
+//		int num10 = num/10;
 //		if (num10 == num1) {
 //			System.out.println("같음");
 //		} else {
@@ -421,7 +421,7 @@ public class IfExam_01 {
 //		int num = random369;
 //		int num1 = num % 10;
 //		int num10 = (num - num1)/10;
-//		if (num1 % 3 == 0 || num10 % 3 == 0) {
+//		if (num_1 != 0 && num1 % 3 == 0 || num_10 != 0 && num10 % 3 == 0) {
 //			System.out.println(num);
 //			System.out.println("박수");
 //		} else {
@@ -444,6 +444,13 @@ public class IfExam_01 {
 //		inputData = scanner.nextLine();
 //		double y3 = Double.parseDouble(inputData);
 //		if ((x3 >= x1 && x3 <= x2) && (y3 >=y1 && y3 <=y2)) {
+//			System.out.println(x3 + "," +y3 + "포함됩니다.");
+//		} else {System.out.println("포함 안됩니다.")}
+		
+		// 모두 &&일 때
+		// false를 찾으면 뒤에 연산을 안 한다.
+		// 모두 ||일 때 
+		// true를 찾으면 뒤에 연산을 안 한다.
 
 	}
 

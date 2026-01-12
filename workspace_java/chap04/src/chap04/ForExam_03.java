@@ -200,16 +200,17 @@ public class ForExam_03 {
         // 2x2=4 3x2=6 4x2=8
         // 2x3=6...
 		//System.out.println(i + " x " + j + " = " + (i * j));
-//		for (i=2; i<=9; i += 3) {
-//			for(int j=1; j<=9; j++) {
-//			System.out.print(i + " x " + j + " = " + (i * j) +  "\t" );
-//			System.out.print(i +1 + " x " + j + " = " + ((i + 1) * j) +  "\t" );
-//			System.out.println(i +2 + " x " + j + " = " + ((i + 2) * j));
-//			}
-//		
-//		}
 		
+		for (i = 2; i <=9; i +=3 ) {
+			for (k = 1; k <=9; k+=1) {
+				for(int j = 0; j<=2 && i+j <= 9 ; j+=1) {
+					System.out.print(i+j + " x " + k + " = " + ((i+j) * k) + "\t");
+				}
+			System.out.println();
+			}
+		}
 		
+//		다시풀기
         // 문제4
         // 주사위 2개를 굴려서
         // 나올 수 있는 모든 조합 출력
@@ -237,14 +238,12 @@ public class ForExam_03 {
 //			System.out.print("합"+ i +":");
 //			for (int j = 1; j <= 6; j++) {
 //				for (int t = 1; t <=6; t++) {
-//					if (i == j + t)
+//					if (i == j + t) {
 //						System.out.print("[" + j +"," + t + "]");
-//					
-//					else if (j+t == dice + dice) {
+//					}else if (j+t == dice + dice) {
 //					System.out.println();
 //					}
 //				}
-//					
 //			}
 //		}
         
@@ -258,14 +257,22 @@ public class ForExam_03 {
 		//  33 34 35 36
 		//  44 45 46
 				
-		int dice = 6;
-			for (int j = 1; j <= 6; j++) {
-				System.out.println();
-				for (int t = 1; t <=6; t++) {
-					if (j <= t)
-						System.out.print("[" + j +"," + t + "]");				
-			}
-		}
+//		int dice = 6;
+//			for (int j = 1; j <= 6; j++) {
+//				System.out.println();
+//				for (int t = 1; t <=6; t++) {
+//					if (t >= j) {
+//						System.out.print("[" + j +"," + t + "]");
+//				}				
+//			}
+//		}
+//		int dice = 6;
+//		for (int j = 1; j <= 6; j++) {
+//			System.out.println();
+//			for (int t = j; t <=6; t++) {
+//					System.out.print("[" + j +"," + t + "]");				
+//			}
+//		}
 		
 	}
 
