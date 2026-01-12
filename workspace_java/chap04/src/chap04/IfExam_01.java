@@ -282,7 +282,7 @@ public class IfExam_01 {
 //			System.out.println("비겼다");
 //		}
 		
-		여기까지가 180번 Scanner scanner = new Scanner(System.in); 살려서 쓴 곳임
+//		여기까지가 180번 Scanner scanner = new Scanner(System.in); 살려서 쓴 곳임
 				
 		//문제6
 		//임의 세 수 x, y, z를 받아서
