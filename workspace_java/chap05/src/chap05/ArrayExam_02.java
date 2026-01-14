@@ -148,7 +148,7 @@ public class ArrayExam_02 {
 //		}
 //		System.out.println(num);
 		// 4-2. 4보다 큰 수의 개수 구하기
-//		num = 0;
+//		num = 0; // 위에 썼으니 초기화 필요
 //		for(int i = 0; i < array3.length; i++) {
 //			if (array3[i] > 4 ) {
 //				num++;
@@ -167,15 +167,15 @@ public class ArrayExam_02 {
 		
 //		int[] player = new int[] {1, 2, 3, 4, 5};
 //		int[] goalIn = new int[] {2, 4, 5, 1};
-//		int i= 0;
+//		int fail = 0;
 //		boolean flag = false;
-//		for(i = 0; i < player.length; i++) {
-//		
+//		for(int i = 0; i < player.length; i++) {	
 //			for(int j = 0; j < goalIn.length; j++) {
 //				if(player[i] == goalIn[j]) {
 //					break;
 //				}
 //				if(goalIn[j] == goalIn[goalIn.length - 1]) {
+//					fail = player[i];
 //					flag = true;
 //				}
 //			}
@@ -183,7 +183,7 @@ public class ArrayExam_02 {
 //				break;
 //			}
 //		}
-//		System.out.println(player[i]);
+//		System.out.println(fail);
 		
         
         // 문제6
@@ -195,19 +195,19 @@ public class ArrayExam_02 {
 		// 첫번째랑 나머지 비교. 이후 큰 값을 저장.
 		// 이후 큰 값과 다른 값을 비교.
 //		int[] array = new int[] {3, 4, 7, 5, 1, 4, 6};
-//		int big = 0;
+//		int max = 0;
 //		boolean flag = false;
 //		for(int i = 0; i < array.length; i++) {
 //			for(int j = 0; j < array.length; j++) {
 //				if(array[i] < array[j]) {
-//					big = array[j];
+//					max = array[j];
 //					for(int k = 0; k < array.length; k++) {
-//						if(big < array[k]) {
+//						if(max < array[k]) {
 //							break;
 //						}else if (array[k] == array[array.length - 1]) {
 //							flag = true;
 //						}
-//				}
+//					}
 //					
 //				}
 //				if(flag == true) {
@@ -215,31 +215,48 @@ public class ArrayExam_02 {
 //				}
 //			}
 //		}
-//		System.out.println(big);
+//		System.out.println(max);
 		// i에 3이 들어 있고. 이걸 전부 비교하면 된다.
-		int[] array = new int[] {3, 4, 7, 5, 1, 4, 6};
-		int big = 0;
-		int i = 0;
-		int j = 0;
-		int k = 0;
-		boolean flag = false;
-		for(i = 0; i < array.length; i++) {
-			for(j = 0; j < array.length; j++) {
-				if(array[i] < array[j]) {
-					big = array[i];
-					break;
-				}
-			}
-			big = array[i];
-			for(k=i;k<array.length; k++ ) {
-				if(big < array[k]) {
-					big = 0;
-				}
-			}
-			if(big > 0) {
-				break;
-			}
-		}
-	System.out.println(big);
+//		int[] array = new int[] {3, 4, 7, 5, 1, 4, 6};
+//		int max = 0; //최대값
+//		int j = 0;
+//		int k = 0;
+//		for(int i = 0; i < array.length; i++) {//비교할 값1
+//			for(
+//					j = 0; j < array.length; j++) {//비교할 값2
+//				if(array[i] < array[j]) {
+//					max = array[j]; //	인덱스 j가 인덱스i보다 더 클 시 max에 넣고 break
+//					break;
+//				}
+//			}
+//			for(int k=j + 1;k<array.length; k++ ) {
+//				if(max < array[k]) {//max이 다른 값보다 작으면 max 0으로 초기화
+//					max = 0;
+//					break;
+//				}
+//			}
+//			if(max > 0) {//max이 0보다 크다면 max보다 큰 수가 없으므로 반복 break
+//				break;
+//			}
+//		}
+//	System.out.println(max);// 최대값 출력
+	//	단점 
+	//	양의 정수만 비교 가능
+	// 	음의 정수까지 계산하려면 배열의 변수가 가진 최소값을 알고 있어야한다
+//		int[] array = new int[] {3, 4, 7, 5, 1, 4, 6};
+//		int max = q6[0]; 
+//		boolean flag = false;
+//		for(int i = 0; i < array.length; i++) {
+//			for(int j = 0; j < array.length; j++) {
+//				if(array[j] > max) {//	max가 조건문에 들어가 있어 max보다 큰 수가 조건에 부합할 수 없음
+//					max = array[j]; //	max보다 더 큰 수가 들어가다가 max가 최대값에 도달 시 if문은 항상 false이므로 max에 최대값이 할당된 상태로 반복문 종료
+//				}
+//			}
+//		}
+//		System.out.println(max);
+		
+		
+		
+		
 	}
 }
