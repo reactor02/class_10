@@ -127,71 +127,71 @@ public class 다차원배열Exam_03 {
 //			}
 //		}
 
-		//	깜짝퀴즈
-		//	1,2,3,4,5를 넣으시오
-		int[] q1_1 = new int[5];
-		for (int i = 0; i<q1_1.length; i++) {
-			q1_1[i] = i+1;
-			
-		}
-		for (int i = 0; i<q1_1.length; i++) {
-			System.out.println("q1_1["+i+"]: " + q1_1[i]);
-		}
-		
-		// 2. 11~15까지
-		int[] q1_2 =new int[5];
-		for(int j=0; j < q1_2.length; j++) {
-			q1_2[j] = j+11;
-		}
-		// 3. 101~105
-		int[] q1_3 =new int[5];
-		for(int j=0; j < q1_3.length; j++) {
-			q1_3[j] = j+101;
-		}
-		
-		
-		//	4. 2차원 배열 채우시오
-		int[][] q1 = new int[][] {q1_1, q1_2, q1_3};
-		int[][] q1_4 = new int[3][5];
-		q1_4[0] = q1_1;
-		q1_4[1] = q1_2;
-		q1_4[2] = q1_3;
-		
+//		//	깜짝퀴즈
+//		//	1,2,3,4,5를 넣으시오
+//		int[] q1_1 = new int[5];
+//		for (int i = 0; i<q1_1.length; i++) {
+//			q1_1[i] = i+1;
+//			
+//		}
+//		for (int i = 0; i<q1_1.length; i++) {
+//			System.out.println("q1_1["+i+"]: " + q1_1[i]);
+//		}
+//		
+//		// 2. 11~15까지
+//		int[] q1_2 =new int[5];
+//		for(int j=0; j < q1_2.length; j++) {
+//			q1_2[j] = j+11;
+//		}
+//		// 3. 101~105
+//		int[] q1_3 =new int[5];
+//		for(int j=0; j < q1_3.length; j++) {
+//			q1_3[j] = j+101;
+//		}
+//		
+//		
+//		//	4. 2차원 배열 채우시오
+//		int[][] q1 = new int[][] {q1_1, q1_2, q1_3};
+//		int[][] q1_4 = new int[3][5];
+//		q1_4[0] = q1_1;
+//		q1_4[1] = q1_2;
+//		q1_4[2] = q1_3;
+//		
+////		for(int i = 0; i< q1_4.length; i++) {
+////			for(int j = 0; j< q1_4[i].length; j++) {
+////				System.out.println("q1_4["+i+"]["+j+"]" + q1_4[i][j]);
+////			}
+////	}
+//		
+////		for(int i = 0; i< q1_4.length; i++) {
+////			if(i == 0) {
+////				for(int j = 0; j< q1_4[i].length; j++) {
+////					q1_4[i][j] = q1_1[j];
+////				}
+////			}
+////			if(i == 1) {
+////				for(int j = 0; j< q1_4[i].length; j++) {
+////					q1_4[i][j] = q1_2[j];
+////				}
+////			}
+////			if(i == 2) {
+////				for(int j = 0; j< q1_4[i].length; j++) {
+////					q1_4[i][j] = q1_3[j];
+////				}
+////			}
+////		} // 규칙 찾기 위해서 만든 잔재
+//		
+//		for(int i = 0; i< q1_4.length; i++) {
+//				q1_4[i] = q1[i];
+//		}
+//		
+//		
+//		// 2차원 배열 출력하시오
 //		for(int i = 0; i< q1_4.length; i++) {
 //			for(int j = 0; j< q1_4[i].length; j++) {
-//				System.out.println("q1_4["+i+"]["+j+"]" + q1_4[i][j]);
+//				System.out.println("q1_4["+i+"]["+j+"]: " +q1_4[i][j]);
 //			}
-//	}
-		
-//		for(int i = 0; i< q1_4.length; i++) {
-//			if(i == 0) {
-//				for(int j = 0; j< q1_4[i].length; j++) {
-//					q1_4[i][j] = q1_1[j];
-//				}
-//			}
-//			if(i == 1) {
-//				for(int j = 0; j< q1_4[i].length; j++) {
-//					q1_4[i][j] = q1_2[j];
-//				}
-//			}
-//			if(i == 2) {
-//				for(int j = 0; j< q1_4[i].length; j++) {
-//					q1_4[i][j] = q1_3[j];
-//				}
-//			}
-//		} // 규칙 찾기 위해서 만든 잔재
-		
-		for(int i = 0; i< q1_4.length; i++) {
-				q1_4[i] = q1[i];
-		}
-		
-		
-		// 2차원 배열 출력하시오
-		for(int i = 0; i< q1_4.length; i++) {
-			for(int j = 0; j< q1_4[i].length; j++) {
-				System.out.println("q1_4["+i+"]["+j+"]: " +q1_4[i][j]);
-			}
-		}
+//		}
 //		
 //		for(int i=0; i< num.length; i++) {
 //			for(int j = 0; j < 5; j++) {
@@ -218,7 +218,19 @@ public class 다차원배열Exam_03 {
 //				}
 //			}
 //		}
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 }
