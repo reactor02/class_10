@@ -263,8 +263,8 @@ public class ArrayExam_02 {
         
 		int[] array = new int[] {3, 4, 7, 5, 1, 4, 6};
 		int[] array2 = new int[array.length-1];
-		int max = array[0];
-		int max2 = array[0];
+		int max = Integer.MIN_VALUE;
+		int max2 = Integer.MIN_VALUE;
 		boolean flag = false;
 		for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array.length; j++) {
@@ -275,7 +275,7 @@ public class ArrayExam_02 {
 		}
 		//최대값은 발견
 		// 최대값 보다 작은 수 하나를 찾고, 다른 수보다는 큰 수를 찾아야한다.
-		// max와 본인을 제외한 나머지수< a < max
+		// max와 본인을 제외한 나머지수< max2 < max
 		for(int i = 0; i < array.length; i++) {
 			for(int j = 0; j < array.length; j++) {
 				if(array[j] != max) {
@@ -298,11 +298,11 @@ public class ArrayExam_02 {
 		// 배열의 왼쪽의 수는 0으로 바꾸기만 하면된다.
 		// 배열의 오른쪽 수를 이전 배열에서 가져와서 길이의 n-1로 채워나가면 된다.
 		int[] ar = new int[]{3, 4, 7, 5, 1, 4, 6};
-		int[] temp = new int[7];
-		for(int i=0; i<ar.length; i++) {
+		int[] temp = new int[ar.length];
+		for(int i=0; i<ar.length; i++) {//swap기법에 착안해 사용할 임시변수
 			temp[i] = ar[i];
 		}
-		for(int i=0; i<ar.length+1; i++) {
+		for(int i=0; i<ar.length+1; i++) {//각 라운드
 			for (int j=0; j<ar.length ; j++) {
 				if(i>j) {
 					ar[j] = 0;
@@ -311,7 +311,9 @@ public class ArrayExam_02 {
 					ar[j] = temp[j-i];
 					
 				}
+				System.out.print(ar[j] + ",");
 			}
+			System.out.println();
 		}
 		
 		
@@ -342,12 +344,6 @@ public class ArrayExam_02 {
 		
 		
 		//temp[6]부터 하나씩 줄어들어야 한다
-		// i = 3 j = 6 5 4 3
-		// i = 4 j = 6 5 4
-		// i = 5 j = 6 5
-		// i = 6 j = 6
-		// i = 7 j =
-		//0 10 210 3210 
 		for(int i=0; i<ar.length; i++) {
 			for (int j=0; j<temp.length ; j++) {
 				if(i>j) {
@@ -380,15 +376,18 @@ public class ArrayExam_02 {
 //		}
 		// 10-2 : 소문자만
 		// 97~122 아스키코드로 소문자 생성
-//		int min= 97;
-//		int maximum = 122;
-//		int[] passNum = new int[maximum -min +1] ;
-//		for(int i=0; i <pass.length; i++) {
-//			double rand = Math.random();
-//			char randValue = (char) (rand *(maximum -min +1)+min );
-//			System.out.println(randValue);
-//			pass[i] = randValue;
-//		}
+		int min= 97;
+		int maximum = 122;
+		int[] passNum = new int[maximum -min +1] ;
+		char[] pass = new char[8];
+		for(int i=0; i <pass.length; i++) {
+			double rand = Math.random();
+			char randValue = (char)(int)(rand *(maximum -min +1)+min );
+			pass[i] = randValue;
+			System.out.println(pass[i]);
+			
+		}
+		
         // 10-3 : 숫자2개 이상, 대/소문자 각 1개 이상
 		// 숫자 2개 만들고, 대소문자 각 한 개씩 만들고. 나머지는 무작위로 만든다
 		// 무작위로 만들고. 무작위 위치에 끼워넣는다면?
@@ -423,48 +422,46 @@ public class ArrayExam_02 {
 //		}
 //		int [][][] collect = new int[][][] {{pass}, {passLower}, {passUpper}};
 		// pass가 두개, passLower 1개, passUpper 1개 를 포함한 8자리 비밀번호
-		int[] password =new int[8];
-		for(int i=0; i<password.length; i++) {
-			double rand1 = Math.random(); //숫자
-			int randValue1 = (int) (rand1 * 10);
-			int min= 97; //소문자
-			int maximum = 122;
-			double rand2 = Math.random();
-			char randValue2 = (char) (rand2 *(maximum -min +1)+min );
-			min= 65; //대문자
-			maximum = 90;
-			double rand3 = Math.random();
-			char randValue3 = (char) (rand3 *(maximum -min +1)+min );
-			double rand4 = Math.random();
-			int Condition = (int) (rand1 * 2);
-			if (i < 2) {//숫자
-				password[i] = randValue1;
-			}else if(i < 3) {//소문자
-				password[i] = randValue2;
-			}else if(i <4) {//대문자
-				password[i] = randValue3;
-			}else {// 숫자, 소문자, 대문자 랜덤
-				if(Condition == 0) {
-					password[i] = randValue1;
-				}
-				if(Condition == 1) {
-					password[i] = randValue2;
-				}
-				if(Condition == 2) {
-					password[i] = randValue3;
-				}
-			}			
-		}
-		for(int i=0; i<password.length; i++) {
-			if(password[i]>10) {
-				char a12 = (char) password[i];
-				System.out.print(a12);
-			}else {
-				System.out.print(password[i]);
-			}
-			
-		}
-		System.out.println();
+//		int[] password =new int[8];
+//		for(int i=0; i<password.length; i++) {
+//			
+//			int min= 97; //소문자
+//			int maximum = 122;
+//			double rand2 = Math.random();
+//			int randValue2 = (int) (rand2 *(maximum -min +1)+min );
+//			min= 65; //대문자
+//			maximum = 90;
+//			int randValue3 = (int) (rand2 *(maximum -min +1)+min );
+//			double rand4 = Math.random();
+//			int Condition = (int) (rand1 * 2);
+//			if (i < 2) {//숫자
+//				password[i] = randValue1;
+//			}else if(i < 3) {//소문자
+//				password[i] = randValue2;
+//			}else if(i <4) {//대문자
+//				password[i] = randValue3;
+//			}else {// 숫자, 소문자, 대문자 랜덤
+//				if(Condition == 0) {
+//					password[i] = randValue1;
+//				}
+//				if(Condition == 1) {
+//					password[i] = randValue2;
+//				}
+//				if(Condition == 2) {
+//					password[i] = randValue3;
+//				}
+//			}			
+//		}
+//		for(int i=0; i<password.length; i++) {
+//			if(password[i]>10) {
+//				char a12 = (char) password[i];
+//				System.out.print(a12);
+//			}else {
+//				System.out.print(password[i]);
+//			}
+//			
+//		}
+//		System.out.println();
 		
 		
 		
@@ -477,54 +474,49 @@ public class ArrayExam_02 {
         // 조건2 : 예약이 되어있다면 "이미 예약 되어 있습니다"
 		
 		boolean[] seat = new boolean[10] ;
-		int count = 0;
 		
-//		while(true) {
-//			System.out.println("1.예약 2.모든 좌석 현황 3.잔여 좌석 0.종료");
-//			Scanner scan = new Scanner(System.in);
-//			int inputData = scan.nextInt();
-//			if(inputData == 1) {
-//				while(true) {
-//					System.out.println("좌석을 골라주세요");
-//					scan = new Scanner(System.in);
-//					int inputData2 = scan.nextInt();
-//					if(inputData2 >= seat.length) {
-//						System.out.println("없는 좌석입니다");
-//					}else if(seat[inputData2] == false) {
-//						System.out.println(inputData2 +"번 자리 예약 되었습니다");
-//						seat[inputData2] = true;
-//						break;
-//					}else {
-//						System.out.println("이미 예약 되어 있습니다");
-//					}
-//				}
-//			}else if(inputData == 2) {
-//				for(int i = 0; i<seat.length; i++) {
-//					if(seat[i] == true) {
-//						System.out.println(i+"번 좌석은 예약되어있습니다.");
-//					}else {
-//						System.out.println(i+"번 좌석은 비어있습니다.");
-//					}
-//					
-//				}
-//			}else if(inputData == 3) {
-//				for (int i=0; i<seat.length; i++) {
-//					if(seat[i] == false) {
-//						count +=1;
-//					}
-//				}
-//				System.out.println("잔여 좌석의 수는 "+count+"개 입니다");
-//				count = 0;
-//				
-//			}else if(inputData == 0) {
-//				System.out.println("시스템을 종료합니다");
-//				break;
-//			}else {
-//				System.out.println("다시 입력해주세요");
-//			}
-//			
-//			
-//		}
+		while(true) {
+			System.out.println("1.예약 2.모든 좌석 현황 3.잔여 좌석 0.종료");
+			Scanner scan = new Scanner(System.in);
+			int inputData = scan.nextInt();
+			if(inputData == 1) {	
+				System.out.println("좌석을 골라주세요");
+				scan = new Scanner(System.in);
+				int inputData2 = scan.nextInt();
+				if(inputData2 >= seat.length) {
+					System.out.println("없는 좌석입니다");
+				}else if(seat[inputData2] == false) {
+					System.out.println(inputData2 +"번 자리 예약 되었습니다");
+					seat[inputData2] = true;
+				}else {
+					System.out.println("이미 예약 되어 있습니다");
+				}	
+			}else if(inputData == 2) {
+				for(int i = 0; i<seat.length; i++) {
+					if(seat[i] == true) {
+						System.out.println(i+"번 좌석은 예약되어있습니다.");
+					}else {
+						System.out.println(i+"번 좌석은 비어있습니다.");
+					}
+					
+				}
+			}else if(inputData == 3) {
+				int count = 0;
+				for (int i=0; i<seat.length; i++) {
+					if(seat[i] == false) {
+						count +=1;
+					}
+				}
+				System.out.println("잔여 좌석의 수는 "+count+"개 입니다");
+				
+				
+			}else if(inputData == 0) {
+				System.out.println("시스템을 종료합니다");
+				break;
+			}else {
+				System.out.println("다시 입력해주세요");
+			}	
+		}
 		
         
         // 문제12
@@ -548,30 +540,29 @@ public class ArrayExam_02 {
 //            	}
 //            }
 //        }
-		max = 45;
-		int min = 1;
-        int[] lottoNum = new int[6];
-        temp = new int[6];
-        boolean flag1 = true;
-        while(flag1) {// flag가 true인동안 계속 로또 번호 생성
-        	flag1 = false;// 탈출용 코드
-        	for(int i = 0; i <lottoNum.length; i++) {
-            	double random1 = Math.random();
-        		int lotto = (int) (random1 *(max - min + 1) + min);//무작위 로또번호 생성
-        		lottoNum[i] = lotto;//똑같은 값 할당
-        		temp[i] = lotto;//똑같은 값 할당
-            }
-            for(int i = 0; i <lottoNum.length; i++) {//로또값 반복
-            	for(int j = i+1; j<temp.length; j++) {//임시로 만든 temp 반복
-                	if(lottoNum[i] == temp[j] ) {//lotto 값이랑 temp가 같으면 브레이크
-                		flag1 = true;
-                		System.out.println("중복");              	
-                	}
-                }
-            }
-    
-        }
-        
+//		  int max = 45;
+//		  int min = 1;
+//        int[] lottoNum = new int[6];
+//        temp = new int[6];
+//        boolean flag1 = true;
+//        while(flag1) {// flag1이 true인동안 계속 로또 번호 생성
+//        	flag1 = false;// 탈출용 코드
+//        	for(int i = 0; i <lottoNum.length; i++) {
+//            	double random1 = Math.random();
+//        		int lotto = (int) (random1 *(max - min + 1) + min);//무작위 로또번호 생성
+//        		lottoNum[i] = lotto;//똑같은 값 할당
+//        		temp[i] = lotto;//똑같은 값 할당
+//            }
+//            for(int i = 0; i <lottoNum.length; i++) {//로또값 반복
+//            	for(int j = i+1; j<temp.length; j++) {//임시로 만든 temp 반복
+//                	if(lottoNum[i] == temp[j] ) {//lotto 값이랑 temp가 같으면 flag1을 true
+//                		flag1 = true;
+//                		System.out.println("중복");              	
+//                	}
+//                }
+//            }//for 반복 종료시 flag1이 false이면 그대로 while문 탈출
+//        }
+//        
         
         
         	
@@ -594,29 +585,29 @@ public class ArrayExam_02 {
          * }
          */
         // 13-1 : 2층에 주차된 차량 수 출력
-		count = 0;
-		int[][] park = {{0, 0, 0, 0},    // 1층
-		                  {0, 0, 0, 1},    // 2층
-		                  {1, 0, 1, 0},
-		                  {1, 0, 1, 1},
-		                  {1, 1, 1, 1}};
-		for(int i = 0; i< park[1].length; i++) {
-			if(park[1][i] == 0) {
-				count +=1;
-			}
-		}
-		System.out.println(count);	
-		
-		count = 0;
-        // 13-2 : 전체 남은 자리 수 출력
-		for(int i = 0; i< park.length; i++) {//층수 
-			for (int j = 0; j< park[i].length; j++) {// 주차자리
-				if(park[i][j] == 1) {
-					count +=1;
-				}
-			}
-		}
-		System.out.println("전체 남은 자리수:"+count);
+//		count = 0;
+//		int[][] park = {{0, 0, 0, 0},    // 1층
+//		                  {0, 0, 0, 1},    // 2층
+//		                  {1, 0, 1, 0},
+//		                  {1, 0, 1, 1},
+//		                  {1, 1, 1, 1}};
+//		for(int i = 0; i< park[1].length; i++) {
+//			if(park[1][i] == 0) {
+//				count +=1;
+//			}
+//		}
+//		System.out.println(count);	
+//		
+//		count = 0;
+//        // 13-2 : 전체 남은 자리 수 출력
+//		for(int i = 0; i< park.length; i++) {//층수 
+//			for (int j = 0; j< park[i].length; j++) {// 주차자리
+//				if(park[i][j] == 1) {
+//					count +=1;
+//				}
+//			}
+//		}
+//		System.out.println("전체 남은 자리수:"+count);
 		
 		
 		
