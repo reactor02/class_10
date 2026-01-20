@@ -13,6 +13,8 @@ public class CarExam {
 			System.out.println("new Car()에서 예외발생");
 		}
 		System.out.println(c3);
+		
+		System.out.println(c3.brand);
 	}
 
 }
