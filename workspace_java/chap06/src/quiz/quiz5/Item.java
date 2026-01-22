@@ -12,7 +12,12 @@ public class Item {
 		this.price = price;
 		this.detail = detail;
 	}
-	
+//	void setItemName(String itemName) {
+//		this.itemName =itemName;
+//	}
+//	String getItemName(){	
+//		return this.itemName;
+//	}
 	
 
 }

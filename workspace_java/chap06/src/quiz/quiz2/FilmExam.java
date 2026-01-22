@@ -20,7 +20,7 @@ public class FilmExam {
 		film2.print();
 		
 		
-		System.out.println(film1.presequal());
+		System.out.println(film1.preSequel());
 		
 	}
 

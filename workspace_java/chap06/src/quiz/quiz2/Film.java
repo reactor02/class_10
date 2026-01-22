@@ -23,7 +23,7 @@ public class Film {
 		System.out.println(this.releaseDate);
 	}
 	
-	String presequal() {
+	String preSequel() {
 		return filmName + 2;
 	}
 	
