@@ -25,6 +25,9 @@ public class HumanExam {
 		// 자동 선언 돼서 import 생략가능
 		String a = "a";
 		System.out.print(a + Math.random());
+		// public이 없는 class
+		// import 조차 안됨
+//		Access3 a3 = new Access3();
 	}
 
 }
