@@ -14,27 +14,19 @@ public class Naver extends OAuth {
 				if(!this.id.equals(id)) {
 					this.id = id;
 				} else {
-					System.out.println("중복");
 					return false;
 				}
-				if(!this.pw.equals(pw)) {
-					this.pw = pw;
-				} else {
-					System.out.println("중복");
-					return false;
-				}
-				System.out.println("회원가입 완료");
-				return true;
-			} else {
-				System.out.println("회원가입 완료");
-				this.id = id;
+				
 				this.pw = pw;
+				System.out.println("회원가입 완료");
 				return true;
-			}
+			} else {return false;}
 			
 		}
 		
 	}
+		
+
 	
 	@Override
 	boolean login() {

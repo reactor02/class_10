@@ -19,11 +19,8 @@ public class OAuth {
 				} else {
 					return false;
 				}
-				if(!this.pw.equals(pw)) {
-					this.pw = pw;
-				} else {
-					return false;
-				}
+				
+				this.pw = pw;
 				System.out.println("회원가입 완료");
 				return true;
 			} else {return false;}
