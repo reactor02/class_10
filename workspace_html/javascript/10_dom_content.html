@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+<body>
+    <div class='quiz q1'> 미래님 최고다 <div></div>
+    <div id = "msg">
+        <span>원래   </span> 있던 글씨
+    </div>
+    <div id = 'count'>0</div>
+    <div id = 'clock'>시계 로딩 중...</div>
+    
+    <div id = "log">일단 글씨 넣어보자</div>
+
+    <table border = "1">
+        <tbody id = 'tbody'>
+
+        </tbody>
+    </table>
+    
+    <table border = "1">
+        <tbody id = 'tbody2'>
+            
+        </tbody>
+    </table>
+    
+    <script>
+        let msg = document.getElementById('msg')
+        console.log(msg)
+        
+        // textContent
+        // 컨텐츠 영역의 소스 중에 text만 그대로 가져온다
+        console.log('msg.textContent :', msg.textContent)
+
+        // innerText
+        // borwser에 보이는 그대로 text만 가져온다
+        // browser가 보여줄 내용에 대한 계산이 끝나고
+        //      실제 표시하는 text를 가져온다
+        console.log('msg.innerText', msg.innerText)
+
+        // innerHTML
+        // contents 영역의 source를 그대로 가져온다
+        console.log('msg.innerHTML', msg.innerHTML)
+
+        // 변수에 넣으면 contents 내용을 변경해준다
+
+        // textContent, innerText는 tag도 contents로 인식한다
+        msg.textContent = "<h1>h1제목</h1>   &lt   a b      c"
+        msg.innerText = "<h1>h1제목</h1>   &lt   a b      c"
+        // innerHTML : tag는 tag로 인식한다
+        msg.innerHTML = "<h1>h1제목</h1>   &lt;a&gt; b &nbsp; &nbsp; &nbsp; &nbsp;  c"
+        
+        // 보안 땜에 js는 막힘
+        // msg.innerHTML = "<script>alert(1) </"+"script>"
+          
+        msg.innerHTML += "d"
+        
+        // 카운트 올리기
+        
+        setInterval(function (){
+            let count = document.getElementById('count')
+            let cnt = count.textContent
+            console.log(typeof cnt)
+            cnt = Number(cnt) + 1
+            count.innerText = cnt
+        }, 1000);
+        
+         setInterval(function (){
+            const clock = document.getElementById('clock')
+            
+            const now = new Date()
+            const str = now.getMinutes() + '분 ' + now.getSeconds() + '초 '
+            clock.innerText = str
+        }, 300);
+
+
+        ///////////
+        // DOM 생성
+
+        // createElement : DOM 요소 생산
+        let div = document.createElement("div") // <div></div>
+        console.log(div)
+        div.setAttribute('id', 'hanbok')
+        console.log(div)
+        div.textContent = '잘 어울려요'
+        console.log(div)
+        div.setAttribute('style', 'color:red;font-size:1.5em;')
+        console.log(div)
+        const log = document.querySelector('#log')
+        // log.innerHTML = div
+
+        // append
+        // 마지막 자식 요소로 추가된다
+        // - DOM을 넣을 수 있다
+        // - 글씨도 넣을 수 있다
+        log.append(div)
+        log.append('<h1>abcd</h1>')
+        log.append(div)   // 두번 append할 때 주의
+        // 다른 객체는 관계 없이 두번 들어간다
+        // 같은 객체일 때만 이전 객체가 지워지고 마지막 것만 들어감 
+        
+        const div2 = document.createElement('p')
+        div2.innerText = 'p태그'
+        // appandchild
+        // 마지막 자식 요소로 추가한다
+        // DOM만 넣을 수 있다(APPEND와 차이점)
+        log.appendChild(div2)
+        const div3 = document.createElement('p')
+        div3.innerText = 'div3 p태그'
+        
+        // prepend
+        // 첫 자식 요소로 추가
+        log.prepend(div3)
+        
+        const div4 = document.createElement('div')
+        div4.innerText = 'div4 p태그'
+        log.before(div4)
+        
+        const div5 = document.createElement('div')
+        div5.innerText = 'div5 p태그'
+        log.after(div5)
+        
+        let table = document.getElementById('tbody')
+        let tr = document.createElement('tr')
+        let td = document.createElement('td')
+        td.innerText = "첫째 칸" 
+        console.log(td)
+        table.append(tr)
+        tr.append(td)
+        
+        // let table2 = document.getElementById('tbody2')
+        // let tr2 = document.createElement('tr')
+        // let tr3 = document.createElement('tr')
+        // let td2 = document.createElement('td')
+        // let td3 = document.createElement('td')
+        // let td4 = document.createElement('td')
+        // let td5 = document.createElement('td')
+        // td2.innerText = "1-1"
+        // td3.innerText = "1-2"
+        // td4.innerText = "2-1"
+        // td5.innerText = "2-2"
+        // table2.appendChild(tr2)
+        // table2.appendChild(tr3)
+        // console.log(td2)
+        // tr2.append(td2)
+        // tr2.append(td3)
+        // tr3.append(td4)
+        // tr3.append(td5)
+
+        const rows = [
+            ['제목1', '작성자1'],
+            ['제목2', '작성자2'],
+            ['제목3', '작성자3'],
+            ['제목4', '작성자4']
+        ]
+
+        const tbody2 = document.getElementById('tbody2')
+        let html = `
+                <tr>
+                    <td>${rows[0][0]}</td>
+                    <td>${rows[0][1]}</td>
+                <tr>
+        `
+            
+        tbody2.innerHTML = html
+        html = ''
+        for(let i = 0 ; i<rows.length; i++){
+            html += `
+                <tr>
+                    <td>${rows[i][0]}</td>
+                    <td>${rows[i][1]}</td>
+                <tr>
+            `
+        }
+        console.log(html)
+        tbody2.innerHTML = html
+
+        tbody2.innerHTML = ''
+        for(let i = 0 ; i<rows.length; i++){
+            html = `
+                <tr>
+                    <td>${rows[i][0]}</td>
+                    <td>${rows[i][1]}</td>
+                <tr>
+            `
+            tbody2.innerHTML += html
+        }
+        tbody2.innerHTML = ''
+        for(let i = 0 ; i<rows.length; i++){
+            const tr1 = document.createElement('tr')
+            tr1.innerHTML =`
+                <td>${rows[i][0]}</td>
+                <td>${rows[i][1]}</td>
+            `
+            tbody2.append(tr1)
+        }
+
+        tbody2.innerHTML = ''
+        for(let i = 0 ; i<rows.length; i++){
+            html = `
+                <tr>
+                    <td>${rows[i][0]}</td>
+                    <td>${rows[i][1]}</td>
+                <tr>
+            `
+            html += tbody2.innerHTML 
+            tbody2.innerHTML = html
+           
+        }
+        tbody2.innerHTML = html
+
+        // const script = document.createElement('script')
+        // script.innerHTML = 'alert(1)'
+        // log.after(script)
+
+        ///////////////////
+        // style 
+        
+        const clock1 = document.querySelector('#clock')
+
+        // CSS에서 -로 연결되는 프로퍼티 명은
+        // 카멜케이스로 변경해서 사용하면 된다
+        clock1.style.coler ='red'
+        clock1.style.backgroundColor = 'yellow'
+        clock1.style.fontSize = '2em'
+
+        console.log(clock1.style.coler)
+        clock1.style.height = '50px'
+        console.log(clock1.style.height)
+        
+        let w = window.getComputedStyle(clock1, null).getPropertyValue('width')
+        console.log('w: ', w)
+        let a= w.replace('px', "")
+        let b = Number(a) - 100
+        clock1.style.width = `${b}px`
+        console.log(w)
+        // clock의 원래 너비보다 100px 줄어든 너비로 지정해보세
+        
+       
+    </script>
+</body>
+</html>

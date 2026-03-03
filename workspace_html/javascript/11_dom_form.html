@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "text" id = "id" value="abcd"><br>
+    <input type="password" id = "pw"><br>
+    <input type="date" id = "date"><br>
+    <input type="radio" name="ai" value='1' checked>chatGPT
+    <input type="radio" name="ai" value='2'>gemini
+    <input type="radio" name="ai" value='3'>perplexity
+    <input type="radio" name="ai" value='4'>claude
+    <br>
+
+    <input type="checkbox" class="res" value="a">중국집
+    <input type="checkbox" class="res" value="b">한식집
+    <input type="checkbox" class="res" value="c">일식집
+    <br>
+    <select  id="select">
+        <option value="1">html</option>
+        <option value="2">css</option>
+        <option value="3" selected>oracle</option>
+        <option value="4">db</option>
+        <option value="5">javascript</option>
+    </select>
+    <br>
+    <select  id="select2">
+        <option value="h">html</option>
+        <option value="c">css</option>
+        <option value="o">oracle</option>
+        <option value="d">db</option>
+        <option value="j">javascript</option>
+    </select>
+    <br>
+
+    <textarea name="" id="textarea">초기값</textarea>
+
+    <div id="view"></div>
+
+    <script>
+        const text = document.querySelector('#id')
+        console.log(text.value)
+        
+        
+        setTimeout(()=>{
+        
+            console.log('text.value', text.value)
+            text.value = 12345
+
+            const pw = document.querySelector('#pw')
+            console.log('pw.value', pw.value)
+            pw.value =12345
+                
+            const date = document.querySelector('#date')
+            console.log('pw.value', date.value)
+            // 2026-02-05
+            // date.value = '2026-02-04'
+            const date1 = new Date()
+            date1.setHours(date1.getHours() + 9)
+            date.value = date1.toISOString().split('T')[0]
+            
+            const radio = document.querySelector('[name="ai"]:checked')
+            console.log(radio.value)
+
+            const radios = document.querySelectorAll('[name="ai"]')
+            radios[1].checked = true
+
+            let checks = document.querySelectorAll('.res:checked')
+            // let not_checked = document.querySelectorAll('.res:not(:checked)')
+            console.log(checks.length)
+            for(let i=0; i<checks.length; i++){
+                console.log(checks[i].value)
+                checks[i].checked =false
+            }
+
+            let checks2 = document.querySelectorAll('.res')
+            checks2[0].checked = true
+
+            for(let i=0; i<checks2.length; i++){
+                console.log(checks2[i].checked)
+            }
+
+
+            const select = document.querySelector('#select')
+            console.log(select.value)
+            const option = document.querySelector('#select option:checked')
+            console.log(option.innerText)
+
+            select.value = 4
+
+            const view = document.getElementById('view')
+            console.log(view)
+
+            const textarea =document.getElementById('textarea')
+            console.log(textarea)
+            console.log(textarea.value)
+            // textarea.value = '바뀐값<br>다음줄\n진짜 다음 줄'
+            
+            //innerText : 태그는 안되지만 \n은 적용된다
+            document.getElementById('view').innerText = textarea.value
+            //innerHtml
+            let html =textarea.value.replace(/\n/g, '<br>')
+            document.getElementById('view').innerHTML = html
+
+            const css = document.getElementById('select2')
+            css.value = 'c'
+           
+
+            }, 3000)
+
+            
+
+           
+         
+           
+    </script>
+</body>
+</html>
