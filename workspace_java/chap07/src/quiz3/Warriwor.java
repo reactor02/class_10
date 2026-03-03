@@ -4,7 +4,7 @@ public class Warriwor extends Character {
 	
 	Warriwor() {
 		this.name = "warriwor";
-		this.hp = 1000;
+		this.hp = 100;
 		this.ap = 6;
 		this.dp = 10;
 		this.weapon = 10;
@@ -13,8 +13,9 @@ public class Warriwor extends Character {
 	
 	
 	int attack(){
-		System.out.println(this.weapon + this.ap + ((int) (Math.random()* 10)) + "피해 물리공격");
-		return this.weapon + this.ap + ((int) (Math.random()* 10));
+		int a =this.weapon + this.ap + ((int) (Math.random()* 10));
+		System.out.println("전사가 " + a + "피해 물리공격");
+		return a;
 	}
 	
 }

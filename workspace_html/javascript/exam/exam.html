@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+            width: 500px;
+            text-align: center;
+            margin: auto;
+            border-collapse: collapse;
+            position: relative; 
+            table-layout: fixed; 
+        }
+
+        
+        th, td {
+            width: 25%;
+            border: 1px solid #ccc;
+            padding: 8px 0;
+        }
+
+        #mid1, #parent {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        #parent {
+            height: 800px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            display: block; 
+        }
+
+        
+        tbody {
+            display: none;
+            background: white;
+            position: absolute;
+            width: 100%;    
+            left: -1px; 
+            top: 100%; 
+            box-sizing: content-box; 
+            border: 1px solid black;
+            z-index: 10;
+        }
+
+        
+        table:hover tbody {
+             display: block; 
+        }
+
+        
+        tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="">mes</a></th>
+                    <th><a href="">마이페이지</a></th>
+                    <th><a href="">MES일정</a></th>
+                    <th><a href="">재고현황</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="">소개</a></td>
+                    <td><a href="">설정</a></td>
+                    <td><a href="">예시</a></td>
+                    <td><a href="">예시</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">예시</a></td>
+                    <td><a href="">예시</a></td>
+                    <td><a href="">예시</a></td>
+                    <td><a href="">예시</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">예시</a></td>
+                    <td><a href="">예시</a></td>
+                    <td><a href="">예시</a></td>
+                    <td><a href="">예시</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </header>
+
+    <div id="mid1">
+        <form action="" id="login1">
+            <input type="text"><br>
+            <input type="password"><br>
+            <input type="button" value="로그인" id="loginbtn">
+        </form>
+    </div>
+
+    <div id="parent" class="parent">
+        <div class="ib" id="todoList">할 일 리스트</div>
+        <div>
+            <input type="checkbox" id="all" class="all">전체 선택
+        </div>
+        <button id="delete" class="delete">전체삭제</button><br>
+        <input type="text" id="todo">
+        <button id="bt">추가</button><br>  
+    </div>
+</body>
+</html>
