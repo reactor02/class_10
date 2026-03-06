@@ -200,7 +200,6 @@ public class ForExam_03 {
         // 2x2=4 3x2=6 4x2=8
         // 2x3=6...
 		//System.out.println(i + " x " + j + " = " + (i * j));
-<<<<<<< HEAD
 //		for (i=2; i<=9; i += 3) {
 //			for(int j=1; j<=9; j++) {
 //			System.out.print(i + " x " + j + " = " + (i * j) +  "\t" );
@@ -211,25 +210,11 @@ public class ForExam_03 {
 //		}
 		
 		
-=======
-		
-		for (i = 2; i <=9; i +=3 ) {
-			for (k = 1; k <=9; k+=1) {
-				for(int j = 0; j<=2 && i+j <= 9 ; j+=1) {
-					System.out.print(i+j + " x " + k + " = " + ((i+j) * k) + "\t");
-				}
-			System.out.println();
-			}
-		}
-		
-//		다시풀기
->>>>>>> 236cd05f85aec94762522ebcc47374b804c9c419
         // 문제4
         // 주사위 2개를 굴려서
         // 나올 수 있는 모든 조합 출력
         // [1,1] [1,2] [6,6]
         
-<<<<<<< HEAD
 		int dice = 6;
 		for(int i2 = 1; i2 <=6; i2++) {
 			for(int j = 1; j <=6; j++) {
@@ -240,18 +225,6 @@ public class ForExam_03 {
 				}
 			}
 		}
-=======
-//		int dice = 6;
-//		for(int i2 = 1; i2 <=6; i2++) {
-//			for(int j = 1; j <=6; j++) {
-//				if(j == dice) {
-//					System.out.println("[" + i2 +"," + j + "]");
-//				}else {
-//				System.out.print("[" + i2 +"," + j + "]");
-//				}
-//			}
-//		}
->>>>>>> 236cd05f85aec94762522ebcc47374b804c9c419
 		
         // 문제5
         // 주사위 2개를 굴려서
@@ -264,7 +237,6 @@ public class ForExam_03 {
 //			System.out.print("합"+ i +":");
 //			for (int j = 1; j <= 6; j++) {
 //				for (int t = 1; t <=6; t++) {
-<<<<<<< HEAD
 //					if (i == j + t)
 //						System.out.print("[" + j +"," + t + "]");
 //					
@@ -273,14 +245,6 @@ public class ForExam_03 {
 //					}
 //				}
 //					
-=======
-//					if (i == j + t) {
-//						System.out.print("[" + j +"," + t + "]");
-//					}else if (j+t == dice + dice) {
-//					System.out.println();
-//					}
-//				}
->>>>>>> 236cd05f85aec94762522ebcc47374b804c9c419
 //			}
 //		}
         
@@ -298,21 +262,8 @@ public class ForExam_03 {
 //			for (int j = 1; j <= 6; j++) {
 //				System.out.println();
 //				for (int t = 1; t <=6; t++) {
-<<<<<<< HEAD
 //					if (j <= t)
 //						System.out.print("[" + j +"," + t + "]");				
-=======
-//					if (t >= j) {
-//						System.out.print("[" + j +"," + t + "]");
-//				}				
-//			}
-//		}
-//		int dice = 6;
-//		for (int j = 1; j <= 6; j++) {
-//			System.out.println();
-//			for (int t = j; t <=6; t++) {
-//					System.out.print("[" + j +"," + t + "]");				
->>>>>>> 236cd05f85aec94762522ebcc47374b804c9c419
 //			}
 //		}
 		
