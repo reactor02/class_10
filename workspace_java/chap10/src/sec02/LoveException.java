@@ -10,4 +10,6 @@ public class LoveException extends Exception{
 		super(message);
 		System.out.println("LoveExecption(String) constructed");
 	}
+	
+	
 }
