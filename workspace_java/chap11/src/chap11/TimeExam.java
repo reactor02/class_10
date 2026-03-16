@@ -30,6 +30,9 @@ public class TimeExam {
 		String strDate = sdf.format(date);
 		System.out.println(strDate);
 		
+		
+		
+		
 	}
 
 }
