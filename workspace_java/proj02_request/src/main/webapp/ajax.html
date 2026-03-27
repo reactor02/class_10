@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+window.addEventListener('load', function(){
+
+    bind()
+    
+})
+
+function bind(){
+	
+	btn = document.querySelector("#btn");
+	box = document.querySelector("#ajaxBox")
+	btn.addEventListener("click", function(){
+		const xhr = new XMLHttpRequest();
+		xhr.open('get', 'req')
+		xhr.send()
+	    console.log(0, xhr.responseText)
+	    xhr.onload = function(){
+	        console.log(xhr.responseText);
+	        x = JSON.parse(xhr.responseText);
+	        
+	        box.innerHTML = x.key;
+	    }
+	});
+	
+}
+</script>
+</head>
+<body>
+	<button id="btn">ajax</button>
+	<div id="ajaxBox"></div>
+</body>
+</html>

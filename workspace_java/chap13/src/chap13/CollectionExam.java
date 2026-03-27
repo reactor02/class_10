@@ -1,7 +1,9 @@
 package chap13;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CollectionExam {
 	public static void main(String[] args) {
@@ -22,6 +24,65 @@ public class CollectionExam {
 		
 		System.out.println(list.size());
 		System.out.println(list.isEmpty());
+		
+		System.out.println("-----------");
+		
+		Map map = new HashMap();
+		// 추가
+		map.put("k1", "v1");
+		map.put("k2", 123);
+		map.put("k3", list);
+		
+		map.put("k2", 1234); 	//키가 없는 경우
+								// key 추가
+								// key가 있는 경우
+								// 값 덮어쓰기
+		String v = (String)map.get("k1");
+		System.out.println(map);
+		// 없으면 null
+		System.out.println(map.get("가사"));
+		
+		
+		System.out.println("-----------");
+		
+		list = new ArrayList();
+		map = new HashMap();
+		
+//		map.put("한로로", "사랑하게 될꺼야");
+		map.put("가수명", "한로로");
+		map.put("노래제목", "사랑하게 될꺼야");
+		
+		// shallow copy
+		list.add(map);
+		System.out.println(list);
+		System.out.println(":+:+:+:+:+:+:+:+:");
+		
+		map.put("가수명", "kiiikiii");
+		System.out.println(list);
+		
+		//제네릭
+		// 10점 짜리 설명 : 노란줄 없애기
+		// 60점 짜리 설명 : 추가할 자료형을 제한한다
+		// 100점 짜리 설명 : 전달인자나 리턴타입의 자료형을 동적으로 변경한다
+		// 원시타입(int, double 등)은 사용할 수 없고 wrapper 클래스(Integer, Double 등)을 사용해야한다
+		Map<String, Integer> map2 = new HashMap<String, Integer>();
+//		map2.put("k", "ac");
+		map2.put("k", 123);
+		int a = map2.get("k");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}

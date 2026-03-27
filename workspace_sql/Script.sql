@@ -1181,3 +1181,220 @@ ALTER TABLE menu ADD CONSTRAINT PK_MENU PRIMARY KEY (
     sequence2
 );
 
+
+
+
+
+
+
+CREATE TABLE store1 (
+	sequence	number(5)	NOT NULL,
+	sname		varchar2(20)	NULL,
+	snumber		number(15)	NULL,
+	sadr		varchar2(50)	NULL
+);
+CREATE TABLE menu1 (
+	sequence2	number(5)	NOT NULL,
+	menu		varchar2(20)	NULL,
+	price		number(20)	NULL,
+	sequence3	number(5)	REFERENCES order1(sequence3)
+);
+CREATE TABLE guest1 (
+	ID		varchar2(15)	NOT NULL,
+	gadr		varchar2(15)	NULL
+);
+CREATE TABLE order1 (
+	sequence3	number(5)	NOT NULL,
+	ID		varchar2(15)	REFERENCES guest1(ID),
+	requst		varchar2(100)	NULL,
+	time		DATE		NULL,
+	sequence	number(5)	REFERENCES store1(sequence),
+	total		number(20)	NULL,
+	sequence6	number(3)	REFERENCES ordermethod1(sequence6),
+	sequence4	number(5)	NOT NULL
+);
+CREATE TABLE ordermenu1 (
+	sequence2	number(5)	NOT NULL,
+	sequence3	number(5)	REFERENCES order1(sequence3),
+	ordernumber	number(7)	NULL
+);
+CREATE TABLE pay1 (
+	sequence4	number(5)	NOT NULL,
+	paycheck	varchar2(10)	NULL,
+	sequence5	number(3)	REFERENCES payment1(payment)
+);
+CREATE TABLE payment1 (
+	sequence5	number(3)	NOT NULL,
+	payment		varchar2(15)	NULL
+);
+CREATE TABLE ordermethod1 (
+	sequence6	number(3)	NOT NULL,
+	method		varchar2(20)	NULL
+);
+
+ALTER TABLE store ADD CONSTRAINT PK_STORE PRIMARY KEY (sequence);
+ALTER TABLE menu ADD CONSTRAINT PK_MENU PRIMARY KEY (sequence2);
+ALTER TABLE guest ADD CONSTRAINT PK_GUEST PRIMARY KEY (ID);
+ALTER TABLE order1 ADD CONSTRAINT PK_ORDER PRIMARY KEY (sequence3);
+ALTER TABLE pay ADD CONSTRAINT PK_PAY PRIMARY KEY (sequence4);
+ALTER TABLE payment ADD CONSTRAINT PK_PAYMENT PRIMARY KEY (sequence5);
+ALTER TABLE ordermethod ADD CONSTRAINT PK_ORDERMETHOD PRIMARY KEY (sequence6);
+
+--1
+CREATE SEQUENCE SEQ_STORE1 
+START WITH 1 
+INCREMENT BY 1;
+
+
+--2
+CREATE SEQUENCE seq_menu1 
+START WITH 1 
+INCREMENT BY 1;
+
+
+--3
+CREATE SEQUENCE SEQ_ORDER1 
+START WITH 1 
+INCREMENT BY 1;
+
+--4
+CREATE SEQUENCE SEQ_pay1 
+START WITH 1 
+INCREMENT BY 1;
+
+
+--5
+CREATE SEQUENCE SEQ_payment1 
+START WITH 1 
+INCREMENT BY 1;
+
+
+--6
+CREATE SEQUENCE SEQ_ordermethod1 
+START WITH 1 
+INCREMENT BY 1;
+
+
+
+
+SELECT * FROM order1;
+ALTER TABLE ordermethod1 ADD (extrapay varchar2(3));
+
+
+
+
+
+CREATE TABLE todo (
+	todo_id NUMBER PRIMARY KEY,
+	duedate DATE,
+	done NUMBER DEFAULT 0,
+	contents varchar2(4000),
+	ctime DATE 
+);
+
+CREATE SEQUENCE seq_todo;
+
+INSERT INTO todo (todo_id, duedate, done, contents, ctime)
+VALUES (seq_todo.nextval, NULL, 0, '칭찬', sysdate);
+
+SELECT * from todo;
+
+COMMIT;
+INSERT INTO todo (todo_id, duedate, done, contents, ctime)
+VALUES (seq_todo.nextval, NULL, 1, '청소', sysdate);
+
+COMMIT;
+SELECT * from todo;
+INSERT INTO todo (todo_id, duedate, done, contents, ctime)
+VALUES (seq_todo.nextval, NULL, 0, '테러', sysdate);
+
+SELECT * from todo;
+COMMIT;
+
+
+
+SELECT * FROM todo;
+
+
+-- 1. 사용자 정보 테이블
+CREATE TABLE userinfo (
+    id          VARCHAR2(50)   NOT NULL, -- 크기 최적화 (800 -> 50)
+    password    VARCHAR2(255)  NOT NULL, -- 비밀번호는 해시 암호화를 고려해 255 권장
+    email       VARCHAR2(100)  NOT null,
+    phonenum    VARCHAR2(20)   NOT NULL,     -- 전화번호는 010 등으로 시작하므로 VARCHAR2 권장
+    name        VARCHAR2(50)   NOT NULL,
+    joindate	DATE 		   NOT NULL,
+    CONSTRAINT PK_USERINFO PRIMARY KEY (id)
+);
+
+-- 2. 상품 정보 테이블
+CREATE TABLE goods (
+    goodsnum    NUMBER(10)     NOT NULL,
+    gname       VARCHAR2(200)  NOT NULL,
+    category    VARCHAR2(100)  NULL,
+    price       NUMBER(10)     DEFAULT 0 NOT null,
+    stock_count NUMBER(10)     DEFAULT 0 NOT null,
+    regidate		DATE 		   NOT NULL,
+    CONSTRAINT PK_GOODS PRIMARY KEY (goodsnum)
+);
+
+-- 3. 위시리스트 (연결 테이블)
+CREATE TABLE wishlist (
+    goodsnum    NUMBER(10)     NOT NULL,
+    id          VARCHAR2(50)   NOT NULL,
+    gnumber     NUMBER(10)     DEFAULT 1 NOT null,
+    -- 외래키 설정 (데이터 무결성)
+    CONSTRAINT FK_WISH_GOODS FOREIGN KEY (goodsnum) REFERENCES goods(goodsnum),
+    CONSTRAINT FK_WISH_USER  FOREIGN KEY (id) REFERENCES userinfo(id)
+);
+
+-- 4. 리뷰 테이블
+CREATE TABLE review (
+    reviewnum   NUMBER(10)     NOT NULL,
+    id          VARCHAR2(50)   NOT NULL,
+    detail      VARCHAR2(4000) NULL,
+    star_rating NUMBER(1)      CHECK (star_rating BETWEEN 0 AND 5), -- 별점 범위 제한
+    reviewdate 		DATE 		   NOT NULL,
+    CONSTRAINT PK_REVIEW PRIMARY KEY (reviewnum),
+    CONSTRAINT FK_REVIEW_USER FOREIGN KEY (id) REFERENCES userinfo(id)
+);
+
+CREATE SEQUENCE seq_review;
+CREATE SEQUENCE seq_goods;
+
+COMMIT;
+
+SELECT *FROM userinfo; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

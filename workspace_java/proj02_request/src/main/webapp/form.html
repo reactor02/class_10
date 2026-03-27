@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>parameter practice</h1>
+
+<!-- <form method="get" action="http://localhost:8080/proj02_request/req"> -->
+<!-- <form method="get" action="/proj02_request/req"> -->
+<form method="get" action="./req">
+	id : <input type="text" name="id" value="abcd"><br>
+	password : <input type="password" name="pw"><br>
+	
+	<input type="checkbox" name="item" value="1">욕망의 항아리
+	<input type="checkbox" name="item" value="2">노가다 목장갑
+	<input type="checkbox" name="item" value="3">집행자의 검<br>
+	
+	<input type="text" name="none" value="1234" style="display:none;"><br>
+	<input type="hidden" name="hidden" value="히히" >
+	
+	<input type="button" name="btn1" value="btn1"><br>
+	<button type="button" name="btn2" value = "btn2">btn2</button><br>
+	<select name="select" value="s1">
+		<option value ="1"> 무한의 대검 </option>
+		<option value ="2"> 몰락학 왕의 검 </option>
+		<option value ="3"> 처형인의 단검 </option>
+		<option value ="4"> 스태틱 단검 </option>
+	</select>
+	<br>
+	<input type="radio" name="radio1" value="r1" checked>트레이서
+	<input type="radio" name="radio1" value="r2" checked>라인하르타
+	<input type="radio" name="radio1" value="r3" checked>디바
+	<input type="radio" name="radio1" value="r4" checked>메르시<br>
+	
+	<textarea name="ta" value="ta1" >초기값
+	엔터
+	</textarea>
+	
+	<input type="date" name="date1">
+	
+	<input type="submit" value="get transfer">
+	
+</form>
+
+<form method="post" action="./req">
+
+	id : <input type="text" name="id" value="abcd"><br>
+	<input type="submit" value="post transfer">
+	
+	
+</form>
+
+
+</body>
+</html>

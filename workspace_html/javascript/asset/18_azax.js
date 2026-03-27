@@ -29,6 +29,7 @@ function bind(){
             const a=JSON.parse(xhr.responseText)
             console.log(a[1]['name'])
             console.log(a[2]['address']['geo']['lat'])
+            
         }
 
         

@@ -10,6 +10,7 @@ window.addEventListener('load',function(){
     })
 
     const id = this.document.querySelector('#id')
+    id.appen
     
     id.addEventListener('focus', function(evt){
         id.style.backgroundColor = 'yellow'
