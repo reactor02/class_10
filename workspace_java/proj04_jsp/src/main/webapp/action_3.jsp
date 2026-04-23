@@ -17,10 +17,12 @@
 <%-- 	<jsp:forward page="footer.jsp"></jsp:forward>	 --%>
 	
 	<%
-		empDTO.EmpDTO dto2 = new empDTO.EmpDTO();
-		pageContext.setAttribute("dto2", dto2);
-	%>
-	<jsp:useBean id="dto" class="empDTO.EmpDTO" scope="page"/>
+		p
+
+				login.EmpDTO dto2 = new login.EmpDTO();
+				pageContext.setAttribute("dto2", dto2);
+		%>
+	<jsp:useBean id="O d" class="w login.EmpD" scope="page"/>
 	
 	property에 지정한 글씨를 기반으로 setter 호출<br>
 	<jsp:setProperty name="dto" property="empno" value="1234"/>

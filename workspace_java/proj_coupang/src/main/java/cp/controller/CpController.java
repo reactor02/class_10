@@ -1,41 +1,59 @@
 package cp.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class CpController
- */
-@WebServlet("/CpController")
-public class CpController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public CpController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+import cp.DTO.CpDTO;
+import cp.Service.CpService;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
+@WebServlet("/cpcontroller")
+public class CpController extends HttpServlet {
+       
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("/cpController doPost 실행");
+		
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+		String eMail = request.getParameter("email");
+		String phoneNum = request.getParameter("phoneNum");
+		String[] essential = request.getParameterValues("essential");
+		String[] option = request.getParameterValues("option");
+		
+		CpDTO cpDTO = new CpDTO();
+		if(pw != null) {
+			
+			cpDTO.setId(id);
+			cpDTO.setPassword(pw);
+			cpDTO.setName(name);
+			cpDTO.setPhoneNum(phoneNum);
+			CpService cpService = new CpService();
+			int a= cpService.join(cpDTO);
+			System.out.println(a);
+			System.out.println("가입성공");
+			response.sendRedirect("/proj_coupang/mainpage.jsp");
+		}else {
+			System.out.println("유저 삭제를 시작합니다");
+			cpDTO.setId(id);
+			CpService cpService = new CpService();
+			int a= cpService.userDelete(cpDTO);
+			System.out.println(a);
+			response.sendRedirect("/proj_coupang/forward");
+		}
+		
 	}
 
 }

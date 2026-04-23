@@ -1366,7 +1366,36 @@ COMMIT;
 
 SELECT *FROM userinfo; 
 
+CREATE TABLE tag (
+	
 
+CREATE TABLE termcheck (
+    id      VARCHAR2(800),
+    rterm1  NUMBER(1) CHECK (rterm1 IN (0,1)),
+    rterm2  NUMBER(1) CHECK (rterm2 IN (0,1)),
+    rterm3  NUMBER(1) CHECK (rterm3 IN (0,1)),
+    rterm4  NUMBER(1) CHECK (rterm4 IN (0,1)),
+    oterm1  NUMBER(1) CHECK (oterm1 IN (0,1)),
+    oterm2  NUMBER(1) CHECK (oterm2 IN (0,1)),
+    oterm3  NUMBER(1) CHECK (oterm3 IN (0,1)),
+    oterm4  NUMBER(1) CHECK (oterm4 IN (0,1)),
+    CONSTRAINT FK_TERMCHECK_ID FOREIGN KEY (id) REFERENCES userinfo(id)
+);
+
+SELECT *FROM userinfo e, termcheck f
+WHERE e.id = f.id;
+SELECT *FROM termcheck;
+
+COMMIT;
+
+SELECT * from(SELECT rownum AS rnum,e.* from( SELECT emp.*FROM emp
+ORDER BY HIREDATE ) e) e
+WHERE rnum BETWEEN 3 AND 7;
+
+--rowPerPage 10
+--page 1
+
+SELECT ceil(count(*)/10)  FROM emp;
 
 
 

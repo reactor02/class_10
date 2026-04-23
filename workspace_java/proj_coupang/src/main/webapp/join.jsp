@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div id="wrapper">
-		<form method="post" action="#">
+		<form method="post" action="cpcontroller">
 			<div id="box1" class="box">
 
 				<div>
@@ -27,61 +27,61 @@
 				<br>
 				<div>
 					<span class="small"><img src="#" alt="#"></span><input
-						type="password" class="pw" placeholder="비밀번호">
+						type="password" class="pw" placeholder="비밀번호 확인">
 				</div>
 				<br>
 				<div>
 					<span class="small"><img src="#" alt="#"></span><input
-						type="text" name="name" placeholder="비밀번호">
+						type="text" name="name" placeholder="이름">
 				</div>
 				<br>
 				<div>
 					<span class="small"><img src="#" alt="#"></span><input
-						type="password" name="phonenum" placeholder="비밀번호">
+						type="number" name="phoneNum" placeholder="전화번호">
 				</div>
 				<br>
 			</div>
 			<div id="box2" class="box">
 
-				<input type="checkbox" name="checkAll" id="checkAll"> 모두
+				<input type="checkbox"  id="checkAll"> 모두
 				확인하였으며 동의합니다<br>
 			</div>
 			<div id="box" class="box">
 				<div>
-					<input type="checkbox" name="essential1">[필수] 만 14세 이상입니다
+					<input type="checkbox" name="essential" value="0">[필수] 만 14세 이상입니다
 				</div>
 				<div>
-					<input type="checkbox" name="essential2">[필수] 쿠팡 이용약관 동의
+					<input type="checkbox" name="essential" value="0">[필수] 쿠팡 이용약관 동의
 					<button type="button">></button>
 				</div>
 				<div>
-					<input type="checkbox" name="essential3">[필수] 전자금융거래 이용약관
+					<input type="checkbox" name="essential" value="0">[필수] 전자금융거래 이용약관
 					동의
 					<button type="button">></button>
 				</div>
 				<div>
-					<input type="checkbox" name="essential4">[필수] 개인정보 제3자 제공
+					<input type="checkbox" name="essential" value="0">[필수] 개인정보 제3자 제공
 					동의
 					<button type="button">></button>
 				</div>
 				<div>
-					<input type="checkbox" class="optionCheck1" name="option1">[선택]
+					<input type="checkbox" class="optionCheck1" name="option" value="0">[선택]
 					마케팅 목적의 개인정보 수집 및 이용 동의
 					<button type="button">></button>
 				</div>
 				<div>
-					<input type="checkbox" class="optionCheck2" name="option2">선택]
+					<input type="checkbox" class="optionCheck2" >선택]
 					광고성 정보 수신 동의
 					<button type="button">></button>
 				</div>
 				<div>
-					<input type="checkbox" name="option2-1">[선택] 광고성 정보 수신 동의
+					<input type="checkbox" name="option" value="0">[선택] 광고성 정보 수신 동의
 				</div>
 				<div>
-					<input type="checkbox" name="option2-2">[선택] SMS, SNS 수신 동의
+					<input type="checkbox" name="option" value="0">[선택] SMS, SNS 수신 동의
 				</div>
 				<div>
-					<input type="checkbox" name="option2-3">[선택] 앱 푸시 수신 동의
+					<input type="checkbox" name="option" value="0">[선택] 앱 푸시 수신 동의
 				</div>
 			</div>
 			<div>
