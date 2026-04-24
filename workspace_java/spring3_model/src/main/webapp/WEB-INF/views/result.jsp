@@ -17,5 +17,7 @@ ${dto1["id"] }
 ${MemberDTO3}
 <hr>
 ${memberDTO }
+<hr>
+${menu }
 </body>
 </html>

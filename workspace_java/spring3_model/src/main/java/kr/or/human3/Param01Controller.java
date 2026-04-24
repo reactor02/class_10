@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -173,7 +176,7 @@ public class Param01Controller {
 	
 	@RequestMapping("/signup2")
 	public ModelAndView signup2(
-			HttpServletRequest request, 
+			 
 			String id
 	) {
 		ModelAndView mav = new ModelAndView("result");
@@ -222,12 +225,69 @@ public class Param01Controller {
 		
 		ModelAndView mav = new ModelAndView("result");
 		
-		
-		mav.addObject("dto1", dto1);
-//		mav.addObject("memberDTO3", dto2);
-		
 		return mav;
 	}
 	
+	
+	@RequestMapping("/cal/1")
+	public void cal() {
+		System.out.println("1월 달력임니다");
+		
+	}
+	
+
+	@RequestMapping("/cal/{month}")
+	public void cal2(
+			@PathVariable("month") // 생략 불가능
+			int month) {
+		System.out.println(month + "월 달력입니다");
+		
+	}
+	
+	@RequestMapping("/lunch/{store}/order/{menu}/start")
+	public void lunch(
+			@PathVariable("store")
+			String store1, 
+			@PathVariable // 변수명이 같으면 괄호 생략가능
+			String menu
+			) {
+		System.out.println("store1 : " + store1);
+		System.out.println("menu1 : " + menu);
+		System.out.println(store1 + "에서 " + menu + "을(를)  준비합니다");
+	}
+	
+	
+	@RequestMapping("/dinner")
+	public String dinner(Model model, String menu) {
+		System.out.println("dinner 실행 menu: " + menu);
+		
+		model.addAttribute("menu", menu);
+		return "result";
+		
+	}
+	
+	@RequestMapping(value="/brunch")
+	public String bruch() {
+		System.out.println("/brunch");
+		return "result";
+	}
+	
+	@RequestMapping(value={"/brunch1", "/brunch2"})
+	public String bruch2() {
+		System.out.println("/brunch1 또는 /brunch2" );
+		return "result";
+	}
+	
+	@RequestMapping(value="/brunch3", method=RequestMethod.POST)
+	public String bruch3() {
+		System.out.println("/brunch");
+		return "result";
+	}
+	
+	@RequestMapping(value="/brunch4", method= { RequestMethod.POST, RequestMethod.GET})
+	public String bruch4() {
+		System.out.println("/brunch");
+		return "result";
+	}
 	
 }
