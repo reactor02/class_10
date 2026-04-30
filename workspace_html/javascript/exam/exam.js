@@ -6,6 +6,10 @@ window.addEventListener('load', function(){
 
 
 function bind(){
+
+    
+
+    document.querySelector([name="coffeeSelect3"]).value
     // --- [1] 할 일 리스트 로직 (이벤트 위임) ---
     document.querySelector('.parent').addEventListener('click', function(evt){ 
         // 추가 버튼 클릭

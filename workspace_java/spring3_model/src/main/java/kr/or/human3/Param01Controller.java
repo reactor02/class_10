@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -278,7 +279,8 @@ public class Param01Controller {
 		return "result";
 	}
 	
-	@RequestMapping(value="/brunch3", method=RequestMethod.POST)
+//	@RequestMapping(value="/brunch3", method=RequestMethod.POST)
+	@PostMapping
 	public String bruch3() {
 		System.out.println("/brunch");
 		return "result";
