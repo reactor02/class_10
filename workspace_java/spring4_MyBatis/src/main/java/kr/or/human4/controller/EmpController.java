@@ -252,7 +252,14 @@ public String detail(Model model,int empno) {
 	}
 
 
-	
+	@RequestMapping("/mapper")
+	public String mapper(Model model) {
+		List<EmpDTO> list = empService.selectMapper();
+		
+		model.addAttribute("list", list);
+		return "emp";
+		
+	}
 }
 
 

@@ -20,4 +20,6 @@ public interface EmpService {
 	public int deleteEmp2(int empno);
 	public List<EmpDTO> search(EmpDTO empdto);
 	public List<EmpDTO> choice(EmpDTO empdto);
+	
+	public List<EmpDTO> selectMapper();
 }
