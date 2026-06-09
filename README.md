@@ -1,2 +1,1 @@
-# class_10
-about class_10
+java 학습내용들입니다
